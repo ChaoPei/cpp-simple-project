@@ -63,11 +63,14 @@ public:
 		}
 		
 		using ResType = decltype(f(args...));
+		
+		// 将任务打包成一个异步操作
 		auto task = std::make_shared<std::packaged_task<ResType()> >(
 				std::bind(std::forward<F>(f), std::forward<Args>(args)...)
 				);
-
+		
 		// 添加任务到队列
+		// 区域锁，锁定添加任务这个操作
 		{
 			std::lock_guard<std::mutex> lock(m_task); // 锁定临界区
 			tasks.emplace(
@@ -85,7 +88,7 @@ public:
 private:
 	// 获取一个待执行的task
 	Task get_one_task() {
-		std::unique_lock<std::mutex> lock(m_task);
+		std::unique_lock<std::mutex> lock(m_task);		// 唯一锁，更灵活的控制锁的时间和范围
 		// wait 直到有task
 		cv_task.wait(lock, 
 				[this](){ return !tasks.empty(); });
