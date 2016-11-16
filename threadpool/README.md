@@ -18,5 +18,5 @@ foo.get()
 Using main example:
 
 ```
-* g++ -W -std=c++11 -pthread main.cpp -o run
+g++ -W -std=c++11 -pthread main.cpp -o run
 ```
