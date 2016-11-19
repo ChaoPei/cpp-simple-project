@@ -1,3 +1,4 @@
-### C++训练项目集合
+### C++ practice project repo
 
-* 添加opencv-monitor
+* add opencv-monitor
+* add threadpool
