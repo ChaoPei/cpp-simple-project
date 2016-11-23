@@ -6,3 +6,4 @@
 * add web server frame
 * add learn linux
 * add get big/little endian info
+* add design model
