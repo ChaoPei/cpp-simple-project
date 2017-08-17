@@ -6,6 +6,9 @@
 #include <sstream>
 #include <condition_variable>
 
+std::mutex print_mtx;       // 打印过程不是线程安全的，必须加锁
+
+// 队列中任务(消息)
 typedef struct task_tag
 {
     int data;
@@ -26,14 +29,15 @@ public:
 
     }
 
+    // 生产者持队列锁，生成消息任务
     void PushTask( PTask pTask )
     {
         std::unique_lock<std::mutex> lock( m_queueMutex );
-        printf("push %d\n", pTask->data);
         m_queue.push( pTask );
         m_cond.notify_one();
     }
 
+    // 消费者wait条件变量的唤醒，持队列锁，然后消费消息
     PTask PopTask()
     {
         PTask pRtn = NULL;
@@ -47,10 +51,8 @@ public:
         {
             pRtn = m_queue.front();
             if ( pRtn->data != 0 ) {
-                printf("pop %d\n", pRtn->data);
                 m_queue.pop();
             }
-                
         }
 
         return pRtn;
@@ -62,7 +64,7 @@ private:
     std::queue<PTask> m_queue;
 };
 
-void thread_fun( MessageQueue *arguments )
+void thread_fun(MessageQueue *arguments, int thread_id)
 {
     while ( true )
     {
@@ -70,9 +72,12 @@ void thread_fun( MessageQueue *arguments )
 
         if (data != NULL)
         {   
-            std::stringstream ss;
-            ss << std::this_thread::get_id();
-            printf( "Thread is: %s\n", ss.str().c_str());
+
+            {
+                std::lock_guard<std::mutex> locker( print_mtx );
+                printf( "Thread is: %d, pop: %d\n", std::this_thread::get_id(), data->data);
+            }
+            
             if ( 0 == data->data ) //Thread end.
                 break;
             else
@@ -91,12 +96,16 @@ int main( int argc, char *argv[] )
     std::thread threads[THREAD_NUM];
 
     for ( int i=0; i<THREAD_NUM; ++i )
-        threads[i] = std::thread( thread_fun, &cq );
+        threads[i] = std::thread(thread_fun, &cq, i);
 
     int i = 100;
     while( i > 0 )
     {
         Task *pTask = new Task( --i );
+        {
+            std::lock_guard<std::mutex> locker( print_mtx );
+            printf("push %d\n", pTask->data);
+        }
         cq.PushTask( pTask );
     }
 
