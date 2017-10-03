@@ -14,7 +14,7 @@ using namespace std;
 
 #define INF 99999
 
-class GRAPH_BFS {
+class DAG {
 
 private:
     vector<list<int>> graphs;   // 图的邻接表
@@ -77,7 +77,7 @@ public:
 
 int main() {
 
-    GRAPH_BFS gbfs;
+    DAG gbfs;
     gbfs.createGraph();
     gbfs.bfs();
 
