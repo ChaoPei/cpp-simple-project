@@ -1,3 +1,8 @@
+/**
+ * 消费者生产者队列
+ * 练习C++11中条件变量的使用
+ */
+
 #include <queue>
 #include <mutex>
 #include <thread>
