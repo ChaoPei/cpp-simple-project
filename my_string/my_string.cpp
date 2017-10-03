@@ -2,10 +2,10 @@
 #include <vector>
 
 int main() {
-    MyString s;
-    s = MyString("hello");
-    std::vector<MyString> vs;
-    vs.push_back(MyString("world"));
+    Rocco::MyString s;
+    s = Rocco::MyString("hello");
+    std::vector<Rocco::MyString> vs;
+    vs.push_back(Rocco::MyString("world"));
 
     getchar();
     return 0;
