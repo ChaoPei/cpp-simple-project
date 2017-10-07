@@ -62,10 +62,6 @@ public:
         }
         cout << "complete create graphs" << endl;
     }
-
-    void updateAdj(int v) {
-
-    }
     
     void bfs() {
         int start;
@@ -80,10 +76,10 @@ public:
             for(auto it = graphs[start].cbegin(); it != graphs[start].cend(); it++) {
                 // 如果节点还未被遍历过
                 if(!known[(*it).first]) {
-                    cout << (*it).first << " ";
                     // 并且当前的距离小于已知的距离，则更新节点
                     int curValue = dist[start] + (*it).second;
                     if(curValue < dist[(*it).first]) {
+                        cout << (*it).first << " ";
                         dist[(*it).first] = curValue;
                         pre_vex[(*it).first] = start;
                     }
