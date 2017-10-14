@@ -3,13 +3,18 @@
  */
 
 #include <iostream>
-#include <cstdlib>
-#include <sys/ctypes>
-#include <sys/csocket>
-#include <cunistd>
-#include <netinet/cin>
-#include <csignal>
 #include <string>
+
+#include <stdlib.h>
+#include <strings.h>
+#include <sys/types.h>
+#include <sys/socket.h>
+#include <unistd.h>
+#include <netinet/in.h>
+#include <signal.h>
+#include <arpa/inet.h>
+
+#include "signal_process.hpp"
 
 #define PORT 9527
 
@@ -62,7 +67,8 @@ int main(int argc, char* argv[]) {
     inet_pton(AF_INET, argv[1], &server_addr.sin_addr);
 
     connect(s, (struct sockaddr*)&server_addr, sizeof(struct sockaddr));    // 这里s是空的，当连接上服务端之后，获得一个连接后的socket，然后可以进行读写
-
+    std::cout << "connect to server..." << std::endl;
+    
     process_conn_client(s);
     close(s);
     return 0;
@@ -94,7 +100,7 @@ void process_conn_client(int sockfd) {
     ssize_t size = 0;
     constexpr int BUFF_LEN = 1024;
     char buffer[BUFF_LEN];
-
+    
     while(1) {
         size = read(0, buffer, BUFF_LEN);    // 从标准输入(键盘)读取数据
         if(size > 0) {

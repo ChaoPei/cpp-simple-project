@@ -3,13 +3,17 @@
  */
 
 #include <iostream>
-#include <cstdlib>
-#include <sys/ctypes>
-#include <sys/csocket>
-#include <cunistd>
-#include <netinet/cin>
-#include <csignal>
 #include <string>
+
+#include <stdlib.h>
+#include <strings.h>
+#include <sys/types.h>
+#include <sys/socket.h>
+#include <unistd.h>
+#include <netinet/in.h>
+#include <signal.h>
+
+#include "signal_process.hpp"
 
 #define PORT 9527
 #define BACKLOG 2   // 监听队列等待长度
@@ -29,7 +33,7 @@ int main(int argc, char* argv[]) {
 
     int err;
 
-    pid_t ptd;
+    pid_t pid;
 
     /* 注册信号监听事件 */
     signal(SIGINT, sig_process);
@@ -65,7 +69,7 @@ int main(int argc, char* argv[]) {
     // 等待客户端连接
     while(1) {
         
-        int addrlen = sizeof(struct sockaddr);
+        socklen_t addrlen = sizeof(struct sockaddr);
         sc = accept(ss, (struct sockaddr*)&client_addr, &addrlen);
         if(sc < 0) {
             continue;
@@ -111,6 +115,8 @@ void process_conn_server(int sockfd) {
         if(size == 0) {
             return;
         }
+        std::cout << "receive client msg: " << buffer << std::endl;
+
         std::string to_client = std::string(buffer) + " bytes altogether\n";
         send(sockfd, to_client.c_str(), to_client.size(), 0);
     }
