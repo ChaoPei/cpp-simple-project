@@ -63,9 +63,6 @@ void test_pointer_constructor() {
 }
 
 
-
-
-
 int main() {
     test_copy_assignment();
     test_copy_construction();
