@@ -1,4 +1,9 @@
 *.mp4
 *.avi
 out.*
-smart_ptr/clang-4.0.exe.stackdump
+*.stackdump
+*.exe
+data_struct_algorithm/tmp.cpp
+tmp.*
+oo.cpp
+atomic_test.cpp
