@@ -28,7 +28,9 @@
         "typeinfo": "cpp",
         "utility": "cpp",
         "algorithm": "cpp",
-        "cmath": "cpp"
+        "cmath": "cpp",
+        "types.h": "c",
+        "socket.h": "c"
     },
     "clang.cxxflags": [
         "-std=c++11"
