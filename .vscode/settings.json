@@ -30,7 +30,21 @@
         "algorithm": "cpp",
         "cmath": "cpp",
         "types.h": "c",
-        "socket.h": "c"
+        "socket.h": "c",
+        "vector": "cpp",
+        "atomic": "cpp",
+        "bitset": "cpp",
+        "chrono": "cpp",
+        "condition_variable": "cpp",
+        "cstring": "cpp",
+        "ctime": "cpp",
+        "fstream": "cpp",
+        "future": "cpp",
+        "mutex": "cpp",
+        "ratio": "cpp",
+        "sstream": "cpp",
+        "thread": "cpp",
+        "iterator": "cpp"
     },
     "clang.cxxflags": [
         "-std=c++11"
