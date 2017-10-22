@@ -5,10 +5,10 @@
             "includePath": [
                 "${workspaceRoot}",
                 "D:/Cygwin64/usr/include",
-                "D:/Cygwin64/lib/gcc/x86_64-pc-cygwin/5.4.0/include",
-                "D:/Cygwin64/lib/gcc/x86_64-pc-cygwin/5.4.0/include/c++",
-                "D:/Cygwin64/lib/gcc/x86_64-pc-cygwin/5.4.0/include/c++/backward",
-                "D:/Cygwin64/lib/gcc/x86_64-pc-cygwin/5.4.0/include/c++/debug"
+                "D:/Cygwin64/lib/gcc/x86_64-pc-cygwin/6.4.0/include",
+                "D:/Cygwin64/lib/gcc/x86_64-pc-cygwin/6.4.0/include/c++",
+                "D:/Cygwin64/lib/gcc/x86_64-pc-cygwin/6.4.0/include/c++/backward",
+                "D:/Cygwin64/lib/gcc/x86_64-pc-cygwin/6.4.0/include/c++/debug"
             ],
             "defines": [
                 "_DEBUG",
@@ -18,10 +18,10 @@
                 "path": [
                     "${workspaceRoot}",
                     "D:/Cygwin64/usr/include",
-                    "D:/Cygwin64/lib/gcc/x86_64-pc-cygwin/5.4.0/include",
-                    "D:/Cygwin64/lib/gcc/x86_64-pc-cygwin/5.4.0/include/c++",
-                    "D:/Cygwin64/lib/gcc/x86_64-pc-cygwin/5.4.0/include/c++/backward",
-                    "D:/Cygwin64/lib/gcc/x86_64-pc-cygwin/5.4.0/include/c++/debug"
+                    "D:/Cygwin64/lib/gcc/x86_64-pc-cygwin/6.4.0/include",
+                    "D:/Cygwin64/lib/gcc/x86_64-pc-cygwin/6.4.0/include/c++",
+                    "D:/Cygwin64/lib/gcc/x86_64-pc-cygwin/6.4.0/include/c++/backward",
+                    "D:/Cygwin64/lib/gcc/x86_64-pc-cygwin/6.4.0/include/c++/debug"
                 ],
                 "limitSymbolsToIncludedHeaders": true,
                 "databaseFilename": ""
