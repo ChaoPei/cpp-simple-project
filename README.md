@@ -1,55 +1,26 @@
-### C++ practice project repo
+##  C++简单的小项目练习
 
-> C++简单的小项目练习
 
-* **`opencv-monitor`**
-    
-    * 基于opencv实现的实时监控和运动检测
+* 基于opencv实现的实时监控和运动检测（opencv-monitor）
 
-* **`threadpool`**
-    
-    * 线程池实现（`C++11 `练习）
+* C++11 线程池实现（threadpool）
 
-* **`circle-data-buffer`**
-    
-    * 环形缓冲区实现
+* 环形缓冲区实现（circle-data-buffer）
 
-* **`web-server-frame`**
+* C++11 简单的web服务框架实现（web-server-frame）
 
-    * 简单的web服务框架实现（`C++11 `练习）
+* 获取机器的big/little endian类型（get-info）
 
-* **`learn-linux`**
+* 基于C++的设计模式练习（design-model）
 
-    * Linux下C++开发练习 
+* C++11 消息队列（message-queue）
 
-* **`get-info`**
+* C++11 智能指针（smart-ptr）
 
-    * 获取机器的big/little endian类型
+* C++11实现生产者消费者队列（producer-consumer）
 
-* **`design-model`**
+* 练习STL的一些实现（stl-xxx）
 
-    * 基于C++的设计模式练习
+* 数据结构的算法实现（data-struct-algorithm）
 
-* **`message-queue`**
-
-    * C++11实现简单的消息队列
-
-* **`smart_ptr`**
-
-    * C++11实现智能指针
-
-* **`producer_consumer`**
-
-    * C++11实现生产者消费者队列
-
-* **`my_xxx`**
-
-    * 练习STL的一些实现
-
-* **`data_struct_algorithm`**
-
-    * **数据结构的算法实现**
-
-* **`Linux-xxx`**
-
-    * Linux下的网络编程
+* Linux下的网络编程练习（linux-cpp）
