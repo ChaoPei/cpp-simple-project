@@ -1,6 +1,5 @@
 ##  C++简单的小项目练习
 
-
 * 基于opencv实现的实时监控和运动检测（opencv-monitor）
 
 * C++11 线程池实现（threadpool）
@@ -23,4 +22,6 @@
 
 * 数据结构的算法实现（data-struct-algorithm）
 
-* Linux下的网络编程练习（linux-cpp）
+* Linux下的网络编程练习（linux-learn)
+
+* 自定义socket的streambuf（socket_streambuf）
