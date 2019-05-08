@@ -1,6 +1,6 @@
-##  C++简单的小项目练习
+##  C++ 小项目练习
 
-* 基于opencv实现的实时监控和运动检测（opencv_monitor）
+* 基于 opencv 实现的实时监控和运动检测（opencv_monitor）
 
 * C++11 线程池实现（threadpool）
 
@@ -16,9 +16,9 @@
 
 * C++11 智能指针（smart_ptr）
 
-* C++11实现生产者消费者队列（producer_consumer）
+* C++11 实现生产者消费者队列（producer_consumer）
 
-* 练习STL的一些实现（string, vector）
+* 练习 STL 的一些实现（string, vector）
 
 * 数据结构的算法实现（data_struct_algorithm）
 
