@@ -123,7 +123,7 @@ void CircleDataBuffer::writeBuff(const void *src, const size_t write_size) {
 
         // 如果尾部全部写入了
         if(write_cursor >= buffer_size) {
-            write_cursor -= buffer_size;    // 写指针到达缓冲区末尾之后, 从头部开始写入，次你过程环形
+            write_cursor -= buffer_size;    // 写指针到达缓冲区末尾之后, 从头部开始写入
         }
 
     }
